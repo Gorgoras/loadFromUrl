@@ -122,5 +122,4 @@ def subirDataframe(df_to_upload, blob_client):
 
     # subida de informacion
     logging.info('Subiendo informacion al lake')
-    with buf as data:
-        blob_client.upload_blob(data)
+    blob_client.upload_blob(buf.getvalue())
